@@ -108,6 +108,7 @@ button { font-family: inherit; cursor: pointer; }
   width: 34px; height: 34px; border-radius: 10px; background: var(--grad-warm);
   display: flex; align-items: center; justify-content: center; color: #1a0e08; font-size: 1.05rem; flex-shrink: 0;
 }
+.brand-mark-img { height: 28px; width: auto; flex-shrink: 0; display: block; }
 .nav-links { display: flex; gap: 2rem; }
 .nav-links a { font-size: .92rem; color: var(--text-dim); position: relative; padding: .3rem 0; }
 .nav-links a:hover { color: var(--text); }
