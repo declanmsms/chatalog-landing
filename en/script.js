@@ -74,7 +74,7 @@ function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 async function runHeroLoop() {
   while (true) {
     phoneBody.innerHTML = '';
-    phoneStatus.textContent = 'mengetik…';
+    phoneStatus.textContent = 'typing…';
     for (const msg of heroScript) {
       await sleep(900);
       if (msg.side === 'out') {
@@ -87,7 +87,7 @@ async function runHeroLoop() {
       }
       const b = document.createElement('div');
       b.className = `bubble ${msg.side}`;
-      b.innerHTML = msg.text + (msg.side === 'out' ? '<span class="tick">✓✓ dibaca</span>' : '');
+      b.innerHTML = msg.text + (msg.side === 'out' ? '<span class="tick">✓✓ read</span>' : '');
       phoneBody.appendChild(b);
       phoneBody.scrollTop = phoneBody.scrollHeight;
     }
@@ -104,53 +104,53 @@ const demoStatus = document.getElementById('demoStatus');
 
 const demoTree = {
   start: {
-    bot: "hai, selamat datang di Amara Studio 👋 mau cari apa hari ini?",
+    bot: "hi, welcome to Amara Studio 👋 what can I help you find today?",
     options: [
-      { label: 'Cek stok & ukuran', next: 'stock' },
-      { label: 'Saya mau komplain', next: 'escalate' },
-      { label: 'Ada jual sepatu gak?', next: 'marketplace' },
+      { label: 'Check stock & size', next: 'stock' },
+      { label: 'I have a complaint', next: 'escalate' },
+      { label: 'Do you sell sneakers?', next: 'marketplace' },
     ],
   },
   stock: {
-    bot: "Tentu — Amara Wrap Dress tersedia dalam Navy, Black, dan Rust. Navy size M sisa 4 pcs. Mau aku holdkan atau langsung kirim link checkout?",
+    bot: "Sure — the Amara Wrap Dress comes in Navy, Black, and Rust. Navy size M has 4 left in stock. Want me to hold one or send the checkout link?",
     options: [
-      { label: 'Kirim link checkout', next: 'checkout' },
-      { label: 'Lihat warna lain', next: 'colors' },
-      { label: '⟵ Kembali ke awal', next: 'start' },
+      { label: 'Send checkout link', next: 'checkout' },
+      { label: 'Show other colors', next: 'colors' },
+      { label: '⟵ Back to start', next: 'start' },
     ],
   },
   colors: {
-    bot: "Ini yang masih ready sekarang: Navy (sisa 4), Black (sisa 9), Rust (sisa 2) — semua size M. Mau aku kirim link untuk salah satunya?",
+    bot: "Here's what's live right now: Navy (4 left), Black (9 left), Rust (2 left) — all size M. Want a link for one of these?",
     options: [
-      { label: 'Kirim link checkout', next: 'checkout' },
-      { label: '⟵ Kembali ke awal', next: 'start' },
+      { label: 'Send checkout link', next: 'checkout' },
+      { label: '⟵ Back to start', next: 'start' },
     ],
   },
   checkout: {
-    bot: "Selesai ✅ — 1x Amara Wrap Dress (Navy, M), Rp 349.000. Ini link pembayarannya: pay.chatalog.demo/amr-3391. Berlaku 30 menit.",
+    bot: "Done ✅ — 1x Amara Wrap Dress (Navy, M), Rp 349,000. Here's your payment link: pay.chatalog.demo/amr-3391. It expires in 30 minutes.",
     options: [
-      { label: '⟵ Kembali ke awal', next: 'start' },
+      { label: '⟵ Back to start', next: 'start' },
     ],
   },
   escalate: {
-    bot: "Maaf banget soal itu — ini bukan hal yang boleh aku tebak, jadi aku langsung hubungkan ke tim asli sekarang. Mereka akan lanjut di chat yang sama ini, tidak perlu mengulang cerita.",
-    system: 'Dieskalasikan ke agen manusia · rata-rata hand-off 40 detik',
+    bot: "I'm sorry to hear that — this isn't something I should guess on, so I'm looping in a real team member right now. They'll pick up this exact chat, no need to repeat yourself.",
+    system: 'Escalated to human agent · avg. hand-off time 40s',
     options: [
-      { label: '⟵ Kembali ke awal', next: 'start' },
+      { label: '⟵ Back to start', next: 'start' },
     ],
   },
   marketplace: {
-    bot: "Kami sendiri tidak jual sepatu, tapi Ritma Fit — mitra marketplace Chatalog — jual. Mau aku hubungkan ke agen mereka di chat yang sama ini?",
+    bot: "We don't carry footwear ourselves, but Ritma Fit — a Chatalog marketplace partner — does. Want me to connect you to their agent in this same chat?",
     options: [
-      { label: 'Ya, hubungkan', next: 'routed' },
-      { label: 'Tidak, makasih', next: 'start' },
+      { label: 'Yes, connect me', next: 'routed' },
+      { label: 'No thanks', next: 'start' },
     ],
   },
   routed: {
-    bot: "Menghubungkan ke Ritma Fit sekarang — agen mereka akan gabung di sini juga, satu thread yang sama. 👟",
-    system: 'Hand-off marketplace · Ritma Fit (Fitness & apparel)',
+    bot: "Routing you to Ritma Fit now — you'll see their agent join right here, same thread. 👟",
+    system: 'Marketplace hand-off · Ritma Fit (Fitness & apparel)',
     options: [
-      { label: '⟵ Kembali ke awal', next: 'start' },
+      { label: '⟵ Back to start', next: 'start' },
     ],
   },
 };
@@ -193,7 +193,7 @@ async function goToDemoNode(key, userLabel) {
     addDemoBubble('out', userLabel);
   }
 
-  demoStatus.textContent = 'mengetik…';
+  demoStatus.textContent = 'typing…';
   const typing = document.createElement('div');
   typing.className = 'typing-dots';
   typing.innerHTML = '<span></span><span></span><span></span>';
@@ -301,7 +301,7 @@ waFab.addEventListener('click', () => {
   const isOpen = waPanel.classList.toggle('open');
   if (isOpen && !waOpened) {
     waOpened = true;
-    setTimeout(() => addWaBubble('in', "Hai 👋 aku agen demo Chatalog. Tanya apa saja soal harga, setup, atau marketplace — atau bilang hai aja dulu."), 400);
+    setTimeout(() => addWaBubble('in', "Hey 👋 I'm the Chatalog demo agent. Ask me anything about pricing, setup, or the marketplace — or just say hi."), 400);
   }
 });
 waClose.addEventListener('click', () => waPanel.classList.remove('open'));
@@ -319,5 +319,5 @@ waForm.addEventListener('submit', async (e) => {
   waBody.scrollTop = waBody.scrollHeight;
   await sleep(900);
   typing.remove();
-  addWaBubble('in', "Makasih sudah coba demonya! Chatalog asli akan menjawab langsung dari katalog kamu sendiri — jadwalkan demo di atas dan kami siapkan untuk nomor kamu.");
+  addWaBubble('in', "Thanks for trying the demo! A real Chatalog agent would answer this live from your own catalog — book a demo above and we'll set one up on your number.");
 });

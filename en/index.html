@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chatalog — The WhatsApp AI agent that sells for your brand</title>
+<meta name="description" content="Chatalog is the WhatsApp AI agent that sells, promotes, and lists your brand inside a shared marketplace — so customers discover you from every conversation, not just your own.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<div class="grain"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark">C</span>
+      <span class="brand-name">Chatalog</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#product" data-nav>Product</a>
+      <a href="#marketplace" data-nav>Marketplace</a>
+      <a href="#how" data-nav>How it works</a>
+      <a href="#pricing" data-nav>Pricing</a>
+      <a href="#faq" data-nav>FAQ</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.6"/><path d="M12 2.5v2.2M12 19.3v2.2M21.5 12h-2.2M4.7 12H2.5M18.4 5.6l-1.55 1.55M7.15 16.85 5.6 18.4M18.4 18.4l-1.55-1.55M7.15 7.15 5.6 5.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      </button>
+      <a href="../index.html" class="btn btn-ghost" style="font-family:var(--font-mono);">ID</a>
+      <a href="#demo" class="btn btn-ghost">Try the demo chat</a>
+      <a href="#pricing" class="btn btn-solid">Book a demo</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#product" data-nav>Product</a>
+  <a href="#marketplace" data-nav>Marketplace</a>
+  <a href="#how" data-nav>How it works</a>
+  <a href="#pricing" data-nav>Pricing</a>
+  <a href="#faq" data-nav>FAQ</a>
+  <a href="../index.html" class="btn btn-outline" style="margin-top:1rem;font-family:var(--font-mono);">Versi Indonesia</a>
+  <a href="#pricing" class="btn btn-solid" style="margin-top:.6rem;">Book a demo</a>
+</div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-blob blob-a"></div>
+    <div class="hero-blob blob-b"></div>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="dot-pulse"></span>Now onboarding brands · 140+ live</p>
+        <h1>Turn every <em>WhatsApp chat</em> into a checkout.</h1>
+        <p class="hero-sub">Chatalog is the AI sales agent that answers, recommends, upsells, and closes deals for your brand — directly inside WhatsApp. List once, and Chatalog's shared marketplace surfaces you to customers already chatting with brands next to you.</p>
+        <div class="hero-cta">
+          <a href="#pricing" class="btn btn-solid btn-lg">Book a demo</a>
+          <a href="#demo" class="btn btn-outline btn-lg">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M8 5.5v13l11-6.5-11-6.5Z" fill="currentColor"/></svg>
+            Try the demo chat
+          </a>
+        </div>
+        <div class="hero-trust">
+          <span>No app to install</span><i></i><span>Live in one WhatsApp number</span><i></i><span>Human hand-off built in</span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-head">
+            <div class="phone-avatar">AU</div>
+            <div>
+              <div class="phone-name">Amara Studio</div>
+              <div class="phone-status" id="phoneStatus">typing…</div>
+            </div>
+            <div class="phone-badge">AI</div>
+          </div>
+          <div class="phone-body" id="phoneBody"></div>
+          <div class="phone-input">
+            <span>Message</span>
+            <div class="mic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 1 0-6 0v6a3 3 0 0 0 3 3Z" stroke="currentColor" stroke-width="1.6"/><path d="M6 11a6 6 0 0 0 12 0M12 19v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+          </div>
+        </div>
+        <div class="float-card card-1">
+          <span class="fc-label">Order confirmed</span>
+          <span class="fc-value">Rp 349,000</span>
+        </div>
+        <div class="float-card card-2">
+          <span class="fc-label">Marketplace match</span>
+          <span class="fc-value">+3 brands nearby</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Fashion</span><span>Beauty</span><span>Home &amp; Living</span><span>Coffee &amp; F&amp;B</span><span>Electronics</span><span>Fitness</span><span>Skincare</span><span>Pet Care</span>
+        <span>Fashion</span><span>Beauty</span><span>Home &amp; Living</span><span>Coffee &amp; F&amp;B</span><span>Electronics</span><span>Fitness</span><span>Skincare</span><span>Pet Care</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT / PILLARS -->
+  <section class="section" id="product">
+    <div class="section-head">
+      <p class="kicker">01 — Product</p>
+      <h2>One agent. Three jobs.</h2>
+      <p class="section-sub">Chatalog doesn't just reply to messages — it runs the whole conversational storefront, then plugs your brand into a bigger one.</p>
+    </div>
+
+    <div class="pillars">
+      <article class="pillar reveal">
+        <div class="pillar-num">01</div>
+        <h3>Sell</h3>
+        <p>Product Q&amp;A, size and stock checks, cart-building, and checkout links — handled entirely inside the chat your customer already has open. No redirect to an app or website.</p>
+        <ul class="pillar-list">
+          <li>Live catalog &amp; stock sync</li>
+          <li>Cart + Xendit / payment links</li>
+          <li>Order status &amp; tracking</li>
+        </ul>
+      </article>
+      <article class="pillar reveal">
+        <div class="pillar-num">02</div>
+        <h3>Promote</h3>
+        <p>Approved broadcast campaigns, back-in-stock pings, and abandoned-cart nudges that read like a message from a friend — not a blast from a brand.</p>
+        <ul class="pillar-list">
+          <li>Template-approved broadcasts</li>
+          <li>Abandoned cart recovery</li>
+          <li>Restock &amp; drop alerts</li>
+        </ul>
+      </article>
+      <article class="pillar reveal">
+        <div class="pillar-num">03</div>
+        <h3>Marketplace</h3>
+        <p>Every brand on Chatalog sits inside a shared discovery layer. Ask another brand's agent for something you sell better, and the conversation can route straight to you.</p>
+        <ul class="pillar-list">
+          <li>Cross-brand referral routing</li>
+          <li>Shared storefront directory</li>
+          <li>Category-based discovery</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE DEMO -->
+  <section class="section section-demo" id="demo">
+    <div class="section-head">
+      <p class="kicker">02 — Live demo</p>
+      <h2>Chat with it. Right now.</h2>
+      <p class="section-sub">This is a scripted preview of Amara Studio's agent — tap a suggestion, see how Chatalog handles it.</p>
+    </div>
+
+    <div class="demo-wrap">
+      <div class="demo-phone">
+        <div class="phone-head">
+          <div class="phone-avatar">AU</div>
+          <div>
+            <div class="phone-name">Amara Studio</div>
+            <div class="phone-status" id="demoStatus">online</div>
+          </div>
+          <div class="phone-badge">AI</div>
+        </div>
+        <div class="phone-body" id="demoBody"></div>
+        <div class="demo-quickreplies" id="demoQuick"></div>
+      </div>
+
+      <div class="demo-notes">
+        <div class="note reveal">
+          <span class="note-tag">01</span>
+          <p>Ask about stock, size, or color — the agent pulls straight from the live catalog, no canned FAQ.</p>
+        </div>
+        <div class="note reveal">
+          <span class="note-tag">02</span>
+          <p>Say something the agent can't safely resolve (a complaint, a refund) — it escalates to a human instead of guessing.</p>
+        </div>
+        <div class="note reveal">
+          <span class="note-tag">03</span>
+          <p>Ask for something outside the brand's catalog — Chatalog can route the shopper to a marketplace partner instead of a dead end.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how">
+    <div class="section-head">
+      <p class="kicker">03 — Setup</p>
+      <h2>Live on your number in days, not months.</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-line"></div>
+      <div class="tl-step reveal">
+        <div class="tl-dot">01</div>
+        <h4>Connect your number</h4>
+        <p>Bring your existing WhatsApp Business number or start on Meta's free test line — either way, no new app for customers.</p>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-dot">02</div>
+        <h4>Sync your catalog</h4>
+        <p>Point Chatalog at your product sheet, Shopify, or POS. Stock and prices stay live, not a stale export.</p>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-dot">03</div>
+        <h4>Tune the voice</h4>
+        <p>Give it your tone, FAQs, and escalation rules. Approve message templates for promos before anything goes out.</p>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-dot">04</div>
+        <h4>Join the marketplace</h4>
+        <p>Opt into cross-brand discovery whenever you're ready — turn it off any time, it's never required.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARKETPLACE SHOWCASE -->
+  <section class="section" id="marketplace">
+    <div class="section-head">
+      <p class="kicker">04 — Marketplace</p>
+      <h2>One directory. Every brand's agent.</h2>
+      <p class="section-sub">Customers don't browse a marketplace app — the marketplace comes to them, inside a conversation they're already having.</p>
+    </div>
+
+    <div class="mp-scroller" id="mpScroller">
+      <article class="mp-card reveal" style="--hue:14;">
+        <div class="mp-thumb">👗</div>
+        <h4>Amara Studio</h4>
+        <p>Fashion &amp; apparel</p>
+        <span class="mp-meta">128 products synced</span>
+      </article>
+      <article class="mp-card reveal" style="--hue:150;">
+        <div class="mp-thumb">🧴</div>
+        <h4>Bare Skincare</h4>
+        <p>Beauty &amp; skincare</p>
+        <span class="mp-meta">64 products synced</span>
+      </article>
+      <article class="mp-card reveal" style="--hue:32;">
+        <div class="mp-thumb">☕</div>
+        <h4>Filter &amp; Fold</h4>
+        <p>Coffee &amp; F&amp;B</p>
+        <span class="mp-meta">22 products synced</span>
+      </article>
+      <article class="mp-card reveal" style="--hue:255;">
+        <div class="mp-thumb">🛋️</div>
+        <h4>Kayu Living</h4>
+        <p>Home &amp; furniture</p>
+        <span class="mp-meta">89 products synced</span>
+      </article>
+      <article class="mp-card reveal" style="--hue:200;">
+        <div class="mp-thumb">🏋️</div>
+        <h4>Ritma Fit</h4>
+        <p>Fitness &amp; apparel</p>
+        <span class="mp-meta">41 products synced</span>
+      </article>
+      <article class="mp-card reveal" style="--hue:330;">
+        <div class="mp-thumb">🐾</div>
+        <h4>Mochi &amp; Co</h4>
+        <p>Pet care</p>
+        <span class="mp-meta">37 products synced</span>
+      </article>
+    </div>
+    <p class="mp-caption">Sample storefronts shown for illustration — your directory fills with real brands as they onboard.</p>
+  </section>
+
+  <!-- STATS -->
+  <section class="section stats-band">
+    <div class="stats-grid">
+      <div class="stat reveal">
+        <span class="stat-num" data-count="2.3" data-suffix="s">0</span>
+        <span class="stat-label">Target avg. first reply</span>
+      </div>
+      <div class="stat reveal">
+        <span class="stat-num" data-count="38" data-suffix="%">0</span>
+        <span class="stat-label">Uplift in checkout completion</span>
+      </div>
+      <div class="stat reveal">
+        <span class="stat-num" data-count="140" data-suffix="+">0</span>
+        <span class="stat-label">Brands onboarding now</span>
+      </div>
+      <div class="stat reveal">
+        <span class="stat-num" data-count="24" data-suffix="/7">0</span>
+        <span class="stat-label">Coverage, human hand-off included</span>
+      </div>
+    </div>
+    <p class="stats-note">Figures above are illustrative targets for this demo, not audited results.</p>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section" id="testimonials">
+    <div class="section-head">
+      <p class="kicker">05 — Sample voices</p>
+      <h2>What early brands are saying</h2>
+      <p class="section-sub">Illustrative quotes written for this demo — swap in real customer stories once you have them.</p>
+    </div>
+    <div class="quote-wrap">
+      <div class="quote-track" id="quoteTrack">
+        <blockquote class="quote-card">
+          <p>“Our agent now answers size questions at 1am and still sounds like us. Checkout links go out before the customer's thumb leaves the screen.”</p>
+          <footer>— Founder, Amara Studio (sample)</footer>
+        </blockquote>
+        <blockquote class="quote-card">
+          <p>“Two weeks after joining the marketplace we started getting orders referred from a home goods brand's chat. We never built that funnel — Chatalog did.”</p>
+          <footer>— Ops lead, Kayu Living (sample)</footer>
+        </blockquote>
+        <blockquote class="quote-card">
+          <p>“The escalation rule is what sold us — the bot never pretends to know a refund policy it doesn't. It just hands off, fast.”</p>
+          <footer>— CX manager, Bare Skincare (sample)</footer>
+        </blockquote>
+      </div>
+      <div class="quote-dots" id="quoteDots"></div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <div class="section-head">
+      <p class="kicker">06 — Pricing</p>
+      <h2>Pick a plan, keep the marketplace optional.</h2>
+    </div>
+
+    <div class="pricing-toggle">
+      <span class="pt-label" data-active="true">Monthly</span>
+      <button class="pt-switch" id="ptSwitch" aria-label="Toggle annual pricing"><span class="pt-knob"></span></button>
+      <span class="pt-label">Annual <em>(2 months free)</em></span>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="price-card reveal">
+        <h3>Starter</h3>
+        <p class="price-desc">One brand, one number, getting the basics live.</p>
+        <div class="price-amount"><span class="price-cur">$</span><span class="price-num" data-monthly="49" data-annual="41">49</span><span class="price-per">/mo</span></div>
+        <ul class="price-features">
+          <li>1 WhatsApp number</li>
+          <li>Up to 200 SKUs</li>
+          <li>Sell + support flows</li>
+          <li>Email support</li>
+        </ul>
+        <a href="#" class="btn btn-outline btn-block">Choose Starter</a>
+      </div>
+
+      <div class="price-card price-featured reveal">
+        <span class="price-ribbon">Most chosen</span>
+        <h3>Growth</h3>
+        <p class="price-desc">Sell, promote, and start listing in the marketplace.</p>
+        <div class="price-amount"><span class="price-cur">$</span><span class="price-num" data-monthly="149" data-annual="124">149</span><span class="price-per">/mo</span></div>
+        <ul class="price-features">
+          <li>3 WhatsApp numbers</li>
+          <li>Up to 2,000 SKUs</li>
+          <li>Broadcast campaigns</li>
+          <li>Marketplace listing</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="#" class="btn btn-solid btn-block">Choose Growth</a>
+      </div>
+
+      <div class="price-card reveal">
+        <h3>Marketplace+</h3>
+        <p class="price-desc">Multi-brand groups and agencies running several storefronts.</p>
+        <div class="price-amount"><span class="price-cur">$</span><span class="price-num" data-monthly="399" data-annual="333">399</span><span class="price-per">/mo</span></div>
+        <ul class="price-features">
+          <li>Unlimited numbers</li>
+          <li>Unlimited SKUs</li>
+          <li>Cross-brand analytics</li>
+          <li>Dedicated success manager</li>
+        </ul>
+        <a href="#" class="btn btn-outline btn-block">Talk to sales</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="section-head">
+      <p class="kicker">07 — FAQ</p>
+      <h2>Questions brands ask first</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q">Do my customers need to install anything?<span class="faq-plus"></span></button>
+        <div class="faq-a"><p>No. Chatalog runs on WhatsApp Business numbers your customers already message. There's no separate app, web portal, or account to create on their end.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">What happens when the agent can't answer something?<span class="faq-plus"></span></button>
+        <div class="faq-a"><p>It escalates to a human on your team instead of guessing — refund requests, complaints, and anything outside its confidence threshold get handed off with full chat context attached.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Can I control exactly what the agent says?<span class="faq-plus"></span></button>
+        <div class="faq-a"><p>Yes — you set the tone, the FAQ answers, escalation rules, and approve every outbound broadcast template before it can be sent.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">How does cross-brand marketplace routing work?</button>
+        <div class="faq-a"><p>It's opt-in. When a shopper asks your agent for something outside your catalog, it can suggest a relevant marketplace partner instead of a dead end — and the reverse happens for you, too.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">What do I need to get started?<span class="faq-plus"></span></button>
+        <div class="faq-a"><p>A WhatsApp Business number (or Meta's free test number to trial it), and a product catalog — a spreadsheet is enough to start.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="cta-blob"></div>
+    <h2>Your next sale is already typing.</h2>
+    <p>Get Chatalog live on your number this week — and decide later if you want the marketplace too.</p>
+    <a href="#pricing" class="btn btn-solid btn-lg">Book a demo</a>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#top" class="brand"><span class="brand-mark">C</span><span class="brand-name">Chatalog</span></a>
+      <p>The WhatsApp AI agent that sells, promotes, and lists your brand inside a shared marketplace.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Product</h5>
+      <a href="#product">Features</a>
+      <a href="#marketplace">Marketplace</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#demo">Live demo</a>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <a href="#">About</a>
+      <a href="#">Careers</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h5>Resources</h5>
+      <a href="#faq">FAQ</a>
+      <a href="#">Docs</a>
+      <a href="#">Status</a>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Chatalog. Demo site — all metrics and quotes are illustrative.</span>
+    <div class="footer-socials">
+      <a href="#" aria-label="X"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4l16 16M20 4 4 20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></a>
+      <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 10.5v6M7.5 7.8v.01M11.5 16.5v-3.6c0-1.2.9-2 2-2s2 .8 2 2v3.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></a>
+      <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WA WIDGET -->
+<button class="wa-fab" id="waFab" aria-label="Open chat">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.3 8.7c.2-.6.6-.6.9-.6h.6c.2 0 .4 0 .6.5s.6 1.6.7 1.7c.1.1.1.3 0 .5s-.2.3-.4.5-.3.4-.1.7c.2.4 1 1.5 2.1 2.1.3.2.5.1.7-.1l.4-.5c.2-.2.4-.2.6-.1l1.5.7c.2.1.4.2.4.4 0 .5-.2 1.4-1 1.8-.7.4-1.4.4-2.3 0-1.9-.7-3.6-2.4-4.3-4.3-.4-.9-.4-1.6 0-2.3Z" fill="currentColor"/></svg>
+</button>
+<div class="wa-panel" id="waPanel">
+  <div class="wa-panel-head">
+    <div class="phone-avatar">C</div>
+    <div>
+      <div class="phone-name">Chatalog</div>
+      <div class="phone-status">Ask us anything</div>
+    </div>
+    <button class="wa-close" id="waClose" aria-label="Close">&times;</button>
+  </div>
+  <div class="wa-panel-body" id="waBody"></div>
+  <form class="wa-panel-input" id="waForm">
+    <input type="text" id="waInput" placeholder="Type a message…" autocomplete="off">
+    <button type="submit" aria-label="Send">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m4 12 16-8-6 16-3-6-7-2Z" fill="currentColor"/></svg>
+    </button>
+  </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
